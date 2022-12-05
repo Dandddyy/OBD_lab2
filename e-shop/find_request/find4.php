@@ -16,48 +16,83 @@ $check = 0;
     <title>Requests</title>
 </head>
 <style>
-    body{
-        background-image: url("../background47.jpg");
-    }
-    th, td {
-        padding: 10px;
-    }
-
-    th {
-        background: #606060;
+    body {
+        background-image: url("../background.jpg");
         color: #ffffff;
     }
 
-    td {
-        background: #b5b5b5;
+    th, td {
+        padding: 10px;
+        border-radius: 2px;
     }
+
+    th {
+        background: #303030;
+        color: #ffffff;
+        border: 1px solid #606060;
+    }
+
+    td {
+        background: #606060;
+    }
+
+    table {
+        padding-top: 30px;
+    }
+
+    form {
+        padding-left: 20px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    a {
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+        background-color: #303030;
+        color: white;
+        padding 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 7px;
+        border: 1px solid #606060;
+    }
+
 </style>
 <body>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Phone Number</th>
-        <th>E-Mail</th>
-    </tr>
-    <?php
-    foreach ($table as $table){
-        if($check != $table[0]){
-        $check = $table[0];
-        ?>
+<div class="block1" align="center"
+     style="width: 30%; background-color: #101010; position: absolute; top: 20px; left: 35%; border-radius: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
+    <table>
         <tr>
-            <td><?= $table[0] ?></td>
-            <td><?= $table[1] ?></td>
-            <td><?= $table[2] ?></td>
-            <td><?= $table[3] ?></td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>E-Mail</th>
         </tr>
         <?php
+        foreach ($table as $table){
+            if($check != $table[0]){
+                $check = $table[0];
+                ?>
+                <tr>
+                    <td><?= $table[0] ?></td>
+                    <td><?= $table[1] ?></td>
+                    <td><?= $table[2] ?></td>
+                    <td><?= $table[3] ?></td>
+                </tr>
+                <?php
+            }
         }
-    }
-    ?>
-</table>
-<br><br>
-<form action="../index.php">
-    <button type="submit">Home</button>
-</form>
+        ?>
+    </table>
+    <br><br>
+    <form action="../index.php" style="text-align: center; padding-bottom: 30px; padding-left: 0px">
+        <button type="submit">Home</button>
+    </form>
+</div>
 </body>
