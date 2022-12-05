@@ -22,18 +22,18 @@ require_once '../config/connect.php';
     <button type="submit">Find</button>
 </form><br>
 <form action="../find_request/find2.php" method="post">
-    <h3>Знайти кур'єрів, що доставляли продукт з типом:</h3>
-    <input type="text" name="type"><br><br>
+    <h3>Знайти продукти дорожчі за (ціна)</h3>
+    <input type="number" name="price"><br><br>
     <button type="submit">Find</button>
 </form><br>
 <form action="../find_request/find3.php" method="post">
-    <h3>Знайти клієнта, що сплачував методом (card/cash):</h3>
-    <input type="text" name="payment_method"><br><br>
+    <h3>Знайти продукти дешевші за (ціна):</h3>
+    <input type="number" name="price"><br><br>
     <button type="submit">Find</button>
 </form><br>
 <form action="../find_request/find4.php" method="post">
-    <h3>Знайти постачальника, що постачав продукт дорожче за:</h3>
-    <input type="number" name="price"><br><br>
+    <h3>Знайти кур'єра, що доставляв замовлення з ID:</h3>
+    <input type="number" name="order_id"><br><br>
     <button type="submit">Find</button>
 </form><br>
 <form action="../find_request/find5.php" method="post">

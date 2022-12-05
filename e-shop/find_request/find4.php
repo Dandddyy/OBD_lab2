@@ -2,9 +2,9 @@
 
 require_once '../config/connect.php';
 
-$price = $_POST['price'];
+$order_id = $_POST['order_id'];
 
-$table = mysqli_query($connect, "SELECT * FROM `supplier` INNER JOIN `product` ON (`supplier`.`supplier_id`=`product`.`supplier_id`) WHERE `product`.`price`>'$price'");
+$table = mysqli_query($connect, "SELECT * FROM `courier` INNER JOIN `order` ON (`courier`.`courier_id`=`order`.`courier_id`) WHERE `order`.`order_id`='$order_id'");
 $table = mysqli_fetch_all($table);
 $check = 0;
 
@@ -36,10 +36,9 @@ $check = 0;
 <table>
     <tr>
         <th>ID</th>
-        <th>Company</th>
+        <th>Name</th>
         <th>Phone Number</th>
         <th>E-Mail</th>
-        <th>Address</th>
     </tr>
     <?php
     foreach ($table as $table){
@@ -51,7 +50,6 @@ $check = 0;
             <td><?= $table[1] ?></td>
             <td><?= $table[2] ?></td>
             <td><?= $table[3] ?></td>
-            <td><?= $table[4] ?></td>
         </tr>
         <?php
         }

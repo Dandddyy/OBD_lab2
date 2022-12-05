@@ -19,7 +19,7 @@ WHERE (`customer`.`customer_id` IN
 )))))
 
 AND (`customer`.`customer_id` NOT IN
-(SELECT Y.`customer_id`
+(SELECT Y.`customer_id` 
  FROM `order` Y
  WHERE (EXISTS
      (SELECT  `order`.`product_id`
@@ -28,7 +28,7 @@ AND (`customer`.`customer_id` NOT IN
             (SELECT `order`.`product_id`
      FROM `order` INNER JOIN `customer` ON `order`.`customer_id`=`customer`.`customer_id`
      WHERE  `customer`.`name` = '$name')
-))));");
+))))");
 $table = mysqli_fetch_all($table);
 $check = 0;
 
