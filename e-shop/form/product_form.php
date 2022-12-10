@@ -50,7 +50,7 @@ require_once '../config/connect.php';
 <div class="block1"
      style="width: 20%; background-color: #101010; position: absolute; top: 20px; left: 40%; border-radius: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
     <h3>Add new Product</h3>
-    <form action="../vendor/add_product.php" method="post">
+    <form action="../vendorr/add_product.php" method="post">
         <p>Supplier ID</p>
         <input type="number" name="supplier_id">
         <p>Name</p>

@@ -50,7 +50,7 @@ require_once '../config/connect.php';
 <div class="block1"
      style="width: 20%; background-color: #101010; position: absolute; top: 20px; left: 40%; border-radius: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
     <h3>Add new Supplier</h3>
-    <form action="../vendor/add_supplier.php" method="post">
+    <form action="../vendorr/add_supplier.php" method="post">
         <p>Company</p>
         <input type="text" name="company">
         <p>Phone Number</p>

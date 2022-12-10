@@ -1,6 +1,10 @@
 <?php
+namespace Dompdf;
+require '../config/connect.php';
+require '../dompdf/autoload.inc.php';
 
-require_once '../config/connect.php';
+$dompdf = new Dompdf;
+$dompdf->setPaper("A4", "landscape");
 
 $name = $_POST['name'];
 
@@ -31,6 +35,8 @@ AND (`customer`.`customer_id` NOT IN
 ))))");
 $table = mysqli_fetch_all($table);
 $check = 0;
+
+$html = "<h3>Find a customer who ordered all and only those products that the customer $name ordered</h3>";
 
 ?>
 <!doctype html>
@@ -100,18 +106,22 @@ $check = 0;
             <th>Address</th>
         </tr>
         <?php
+        $iter = 0;
+        $kol = 0;
         foreach ($table as $table){
             if($check != $table[0]){
                 $check = $table[0];
                 ?>
                 <tr>
-                    <td><?= $table[0] ?></td>
-                    <td><?= $table[1] ?></td>
-                    <td><?= $table[2] ?></td>
-                    <td><?= $table[3] ?></td>
-                    <td><?= $table[4] ?></td>
+                    <td><?= $mass[0 + $iter] = $table[0] ?></td>
+                    <td><?= $mass[1 + $iter] = $table[1] ?></td>
+                    <td><?= $mass[2 + $iter] = $table[2] ?></td>
+                    <td><?= $mass[3 + $iter] = $table[3] ?></td>
+                    <td><?= $mass[4 + $iter] = $table[4] ?></td>
                 </tr>
                 <?php
+                $iter += 5;
+                $kol += 1;
             }
         }
         ?>
@@ -122,3 +132,28 @@ $check = 0;
     </form>
 </div>
 </body>
+<?php
+$it = 0;
+for($i = 0; $i < $kol ; $i++){
+
+    $html .= "ID: $mass[$it] <br>";
+    $it += 1;
+    $html .= "Name: $mass[$it] <br>";
+    $it += 1;
+    $html .= "Phone Number: $mass[$it] <br>";
+    $it += 1;
+    $html .= "E-Mail: $mass[$it] <br>";
+    $it += 1;
+    $html .= "Address: $mass[$it] <br>";
+    $it += 1;
+    $html .= "------------------------ <br>";
+}
+
+$date = date("Y-m-d-H-i-s");
+$dompdf->loadHtml($html);
+$dompdf->render();
+$dompdf->addInfo("Find a customer who ordered all and only those products that the customer $name ordered", "$date.pdf");
+$output = $dompdf->output();
+file_put_contents("$date.pdf", $output);
+
+?>

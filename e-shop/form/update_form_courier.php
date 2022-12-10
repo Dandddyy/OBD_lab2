@@ -54,7 +54,7 @@ $courier = mysqli_fetch_assoc($courier);
 <div class="block1"
      style="width: 20%; background-color: #101010; position: absolute; top: 20px; left: 40%; border-radius: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);">
     <h3>Update Courier</h3>
-    <form action="../vendor/update_courier.php" method="post">
+    <form action="../vendorr/update_courier.php" method="post">
         <input type="hidden" name="courier_id" value="<?= $courier['courier_id'] ?>">
         <p>Name</p>
         <input type="text" name="name" value="<?= $courier['name'] ?>">

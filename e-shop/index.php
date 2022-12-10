@@ -90,7 +90,7 @@ require_once 'config/connect.php';
                 <td><?= $order[6] ?></td>
                 <td><?= $order[7] ?></td>
                 <td><a style="color: #6dcfcf;" href="form/update_form_order.php?id=<?= $order[0] ?>">Update</a></td>
-                <td><a style="color: #e37249;" href="vendor/delete_order.php?id=<?= $order[0] ?>">Delete</a></td>
+                <td><a style="color: #e37249;" href="vendorr/delete_order.php?id=<?= $order[0] ?>">Delete</a></td>
             </tr>
             <?php
         }
@@ -124,7 +124,7 @@ require_once 'config/connect.php';
                 <td><?= $customer[4] ?></td>
                 <td><a style="color: #6dcfcf;" href="form/update_form_customer.php?id=<?= $customer[0] ?>">Update</a>
                 </td>
-                <td><a style="color: #e37249;" href="vendor/delete_customer.php?id=<?= $customer[0] ?>">Delete</a></td>
+                <td><a style="color: #e37249;" href="vendorr/delete_customer.php?id=<?= $customer[0] ?>">Delete</a></td>
             </tr>
             <?php
         }
@@ -155,7 +155,7 @@ require_once 'config/connect.php';
                 <td><?= $courier[2] ?></td>
                 <td><?= $courier[3] ?></td>
                 <td><a style="color: #6dcfcf;" href="form/update_form_courier.php?id=<?= $courier[0] ?>">Update</a></td>
-                <td><a style="color: #e37249;" href="vendor/delete_courier.php?id=<?= $courier[0] ?>">Delete</a></td>
+                <td><a style="color: #e37249;" href="vendorr/delete_courier.php?id=<?= $courier[0] ?>">Delete</a></td>
             </tr>
             <?php
         }
@@ -186,9 +186,9 @@ require_once 'config/connect.php';
                 <td><?= $product[1] ?></td>
                 <td><?= $product[2] ?></td>
                 <td><?= $product[3] ?></td>
-                <td><?= $product[4] ?> ₴</td>
+                <td><?= $product[4] ?> UAH</td>
                 <td><a style="color: #6dcfcf;" href="form/update_form_product.php?id=<?= $product[0] ?>">Update</a></td>
-                <td><a style="color: #e37249;" href="vendor/delete_product.php?id=<?= $product[0] ?>">Delete</a></td>
+                <td><a style="color: #e37249;" href="vendorr/delete_product.php?id=<?= $product[0] ?>">Delete</a></td>
             </tr>
             <?php
         }
@@ -222,7 +222,7 @@ require_once 'config/connect.php';
                 <td><?= $supplier[4] ?></td>
                 <td><a style="color: #6dcfcf;" href="form/update_form_supplier.php?id=<?= $supplier[0] ?>">Update</a>
                 </td>
-                <td><a style="color: #e37249;" href="vendor/delete_supplier.php?id=<?= $supplier[0] ?>">Delete</a></td>
+                <td><a style="color: #e37249;" href="vendorr/delete_supplier.php?id=<?= $supplier[0] ?>">Delete</a></td>
             </tr>
             <?php
         }
